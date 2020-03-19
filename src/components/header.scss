@@ -5,8 +5,12 @@ header {
     padding: 10px 10px 10px 20px;
     & .headerLogo {
       font-weight: 400;
-      color: #fff;
       text-shadow: 5px -5px #ddd;
+
+      & a {
+        text-decoration: none;
+        color: #fff;
+      }
     }
   }
 }

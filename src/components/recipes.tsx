@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { ReciData } from "../App";
 import "./recipes.scss";
 
@@ -33,7 +34,9 @@ const AllRecipes = ({ recipe }: ReciProps) => {
         <div>Servings: {recipe.recipe.yield}</div>
       </div>
       <div className="recipeBtnContainer">
-        <button className="recipeBtn">View Detail</button>
+        <button className="recipeBtn">
+          <Link to="">View Detail</Link>
+        </button>
       </div>
     </div>
   );
