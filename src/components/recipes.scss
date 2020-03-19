@@ -37,5 +37,20 @@
   }
   & .recipeNotes {
     font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  & .recipeBtnContainer {
+    & .recipeBtn {
+      color: #fff;
+      font-weight: bold;
+      border: dashed;
+      border-color: lightcoral;
+      background-color: lightpink;
+      border-radius: 5px;
+      padding: 0;
+      cursor: pointer;
+      padding: 10px;
+    }
   }
 }

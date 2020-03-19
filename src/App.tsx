@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AllRecipes from "./components/recipes";
 import Header from "./components/header";
-import Router from "./components/router";
 import "./App.scss";
 import "./components/header.scss";
 import "./css-reset.scss";
