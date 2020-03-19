@@ -1,5 +1,6 @@
 import React from "react";
 import { ReciData } from "../App";
+import "./recipes.scss";
 
 interface ReciProps {
   recipe: ReciData;
@@ -8,19 +9,27 @@ interface ReciProps {
 const AllRecipes = ({ recipe }: ReciProps) => {
   return (
     <div className="recipeContainer">
-      <div>{recipe.recipe.label}</div>
-      <div className="imgEing">
-        <div>
-          {recipe.recipe.ingredients.map(ingredient => (
-            <li>{ingredient.text}</li>
-          ))}
+      <div>
+        <h1 className="recipeTitle">{recipe.recipe.label}</h1>
+      </div>
+      <div className="recipeImgNIng">
+        <div className="ingredientsContainer">
+          <ul className="ingredientsList">
+            {recipe.recipe.ingredients.map(ingredient => (
+              <li className="ingredientsItem">{ingredient.text}</li>
+            ))}
+          </ul>
         </div>
         <div>
-          <img src={recipe.recipe.image} alt={recipe.recipe.label} />
+          <img
+            className="recipeImage"
+            src={recipe.recipe.image}
+            alt={recipe.recipe.label}
+          />
         </div>
       </div>
-      <div className="notes">
-        <div>Calories: {recipe.recipe.calories}</div>
+      <div className="recipeNotes">
+        <div>Calories: {Math.round(recipe.recipe.calories)}</div>
         <div>Servings: {recipe.recipe.yield}</div>
       </div>
     </div>

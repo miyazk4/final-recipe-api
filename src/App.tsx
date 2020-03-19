@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import AllRecipes from "./components/recipes";
 import Header from "./components/header";
-import "./App.css";
+import "./App.scss";
 import "./components/header.scss";
+import "./css-reset.scss";
 
 export interface ReciData {
   recipe: {
@@ -40,13 +41,17 @@ const App = () => {
     <div>
       <Header />
       <main>
-        <h1>Menu</h1>
-        {recipes.map(recipes => (
-          <AllRecipes key={recipes.recipe.label} recipe={recipes} />
-        ))}
+        <h1 className="menuTitle">Menu</h1>
+        <div className="recipe">
+          {recipes.map(recipes => (
+            <AllRecipes key={recipes.recipe.label} recipe={recipes} />
+          ))}
+        </div>
       </main>
     </div>
   );
 };
+
+// como estou a mapear aqui se tentar fazer o grid no outro ficheiro n associa
 
 export default App;

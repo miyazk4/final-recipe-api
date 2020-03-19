@@ -1,0 +1,41 @@
+.recipeContainer {
+  margin: 50px;
+  background-color: #ebd18f;
+  box-shadow: 7px 16px lightsalmon;
+  border-radius: 5px;
+  text-align: center;
+  padding: 15px;
+  display: grid;
+
+  & .recipeTitle {
+    color: lightcoral;
+    font-weight: 400;
+    margin-bottom: 25px;
+  }
+
+  & .recipeImgNIng {
+    border-style: dotted;
+    border-color: lightcoral;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    margin-bottom: 15px;
+
+    & .ingredientsContainer {
+      & .ingredientsList {
+        & .ingredientsItem {
+          font-style: italic;
+        }
+      }
+    }
+
+    & .recipeImage {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+  }
+  & .recipeNotes {
+    font-style: italic;
+  }
+}
