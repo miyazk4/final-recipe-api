@@ -35,7 +35,9 @@ const AllRecipes = ({ recipe }: ReciProps) => {
       </div>
       <div className="recipeBtnContainer">
         <button className="recipeBtn">
-          <Link to="">View Detail</Link>
+          <Link to={{ pathname: `recipe/${recipe.recipe.label}` }}>
+            View Detail
+          </Link>
         </button>
       </div>
     </div>
