@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AllRecipes from "./components/recipes";
 import Header from "./components/header";
+import Router from "./components/router";
 import "./App.scss";
 import "./components/header.scss";
 import "./css-reset.scss";
@@ -34,7 +35,7 @@ const App = () => {
   const fetchData = async (url: string) => {
     const response = await fetch(url);
     const data = await response.json();
-
+    console.log(data.hits);
     setRecipes(data.hits);
   };
   return (

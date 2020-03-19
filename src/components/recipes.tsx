@@ -32,6 +32,9 @@ const AllRecipes = ({ recipe }: ReciProps) => {
         <div>Calories: {Math.round(recipe.recipe.calories)}</div>
         <div>Servings: {recipe.recipe.yield}</div>
       </div>
+      <div>
+        <button className="recipeBtn">View Detail</button>
+      </div>
     </div>
   );
 };
