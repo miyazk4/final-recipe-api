@@ -1,3 +1,41 @@
+// Fix do pq de ele estar a fazer crescer o recipe container tbm
+
+.recipeModalContainer {
+  width: 500px;
+  border: 1px solid red;
+  background-color: lightsalmon;
+  .recipeModalContent {
+    border: 1px solid green;
+    text-align: center;
+  }
+
+  position: fixed;
+  top: 50px;
+  height: 50px;
+
+  /* 
+ common styles for idle and exit as we use the same transitions 
+ for enter and exit
+ */
+  &.idle,
+  &.exit {
+    opacity: 0;
+    width: 20%;
+  }
+
+  /* styles to apply on enter state */
+  &.enter {
+    transition: opacity 300ms linear, width 300ms ease-in;
+    opacity: 1;
+    width: 100%;
+  }
+
+  /* styles to apply on exit state */
+  &.exit {
+    transition: opacity 300ms linear, width 300ms ease-out;
+  }
+}
+
 .recipeContainer {
   margin: 50px;
   background-color: #ebd18f;
