@@ -21,32 +21,63 @@ interface Ingredient {
 }
 
 const App = () => {
+  const [recipes, setRecipes] = useState<ReciData[]>([]);
+  const [search, setSearch] = useState("");
+  const [query, setQuery] = useState("chicken");
+  const [loading, setLoading] = useState(true);
+
   const APP_ID = "3181aa2b";
   const APP_KEY = "0ca13a11544dc7dcafa6790a1795fc46";
-  const apiUrl = `https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`;
 
-  const [recipes, setRecipes] = useState<ReciData[]>([]);
+  const handleSearchChange = (e: any) => {
+    setSearch(e.target.value);
+    console.log(search);
+  };
+
+  const getSearch = (e: any) => {
+    e.preventDefault();
+    setQuery(search);
+    setSearch("");
+  };
 
   useEffect(() => {
-    fetchData(apiUrl);
-  }, []);
+    fetchData(query);
+  }, [query]);
 
   const fetchData = async (url: string) => {
-    const response = await fetch(url);
+    setLoading(true);
+    const response = await fetch(
+      `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
+    );
     const data = await response.json();
     console.log(data.hits);
     setRecipes(data.hits);
+    setLoading(false);
   };
   return (
     <div>
       <Header />
       <main>
+        <form className="searchForm" onSubmit={getSearch}>
+          <input
+            className="searchBar"
+            value={search}
+            onChange={handleSearchChange}
+          />
+          <button className="searchBtn" type="submit">
+            Search
+          </button>
+        </form>
         <h1 className="menuTitle">Menu</h1>
-        <div className="recipe">
-          {recipes.map(recipes => (
-            <AllRecipes key={recipes.recipe.label} recipe={recipes} />
-          ))}
-        </div>
+        {loading ? (
+          <h1 className="loadingTitle">Loading recipes...</h1>
+        ) : (
+          <div className="recipe">
+            {recipes.map(recipes => (
+              <AllRecipes key={recipes.recipe.label} recipe={recipes} />
+            ))}
+          </div>
+        )}
       </main>
     </div>
   );
