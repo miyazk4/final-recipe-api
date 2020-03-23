@@ -1,7 +1,33 @@
 main {
   background-color: #ffb859;
+  & .searchForm {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 50px;
+    height: 100px;
+
+    & .searchBar {
+      width: 50%;
+      border: 0;
+      border-right: 1px solid #ddd;
+    }
+
+    & .searchBtn {
+      border: 0;
+      padding: 0 5px;
+    }
+  }
+
   & .menuTitle {
     padding-top: 25px;
+    text-align: center;
+    font-style: italic;
+    color: #855e42;
+    font-size: 50px;
+  }
+
+  & .loadingTitle {
     text-align: center;
     font-style: italic;
     color: #855e42;
