@@ -1,0 +1,15 @@
+main {
+  background-color: #ffb859;
+  & .menuTitle {
+    padding-top: 25px;
+    text-align: center;
+    font-style: italic;
+    color: #855e42;
+    font-size: 50px;
+  }
+
+  & .recipe {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
