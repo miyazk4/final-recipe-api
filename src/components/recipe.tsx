@@ -19,8 +19,28 @@ const Recipe = ({
       className={`recipeModalContainer ${state}`}
       onTransitionEnd={onTransitionEnd}
     >
-      <h1>{recipe.recipe.label}</h1>
-      <button onClick={close}>Close</button>
+      <div className="recipeModalContent">
+        <div className="recipeName">
+          <h1>{recipe.recipe.label}</h1>
+        </div>
+        <div className="recipeIngNImage">
+          <ul className="recipeList">
+            {recipe.recipe.ingredients.map(ing => (
+              <li className="recipeIngredients">{ing.text}</li>
+            ))}
+          </ul>
+          <div className="recipeImageContainer">
+            <img
+              className="recipeImage"
+              src={recipe.recipe.image}
+              alt={recipe.recipe.label}
+            />
+          </div>
+        </div>
+        <button className="closeBtn" onClick={close}>
+          X
+        </button>
+      </div>
     </div>
   );
 };
