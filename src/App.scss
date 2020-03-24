@@ -38,7 +38,10 @@ main {
     font-style: italic;
     color: #855e42;
   }
-
+  .recipeNotFound {
+    color: #855e42;
+    text-align: $center;
+  }
   .recipe {
     display: grid;
   }
@@ -54,6 +57,9 @@ main {
       font-size: 35px;
     }
 
+    .recipeNotFound {
+      font-size: 30px;
+    }
     .recipe {
       margin: 0 20px;
     }
@@ -65,7 +71,9 @@ main {
     .menuTitle {
       font-size: 40px;
     }
-
+    .recipeNotFound {
+      font-size: 40px;
+    }
     .recipe {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -83,6 +91,9 @@ main {
       font-size: 45px;
     }
 
+    .recipeNotFound {
+      font-size: 45px;
+    }
     .recipe {
       grid-template-columns: repeat(3, 1fr);
     }

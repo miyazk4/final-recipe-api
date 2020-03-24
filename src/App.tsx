@@ -71,6 +71,10 @@ const App = () => {
         <h1 className="menuTitle">Menu</h1>
         {loading ? (
           <h1 className="loadingTitle">Loading recipes...</h1>
+        ) : recipes.length === 0 ? (
+          <h1 className="recipeNotFound">
+            Recipe not found. Please try again.
+          </h1>
         ) : (
           <div className="recipe">
             {recipes.map(recipes => (
