@@ -1,0 +1,35 @@
+.errorContainer {
+  a {
+    text-decoration: none;
+    color: rgb(211, 92, 92);
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  width: 100%;
+  background-color: rgb(252, 252, 208);
+  min-height: 60vh;
+  padding: 20px 0;
+
+  .errorTitle {
+    background-color: rgb(194, 194, 129);
+    border-radius: 15px;
+    width: 55%;
+    margin: 0 auto 25px auto;
+  }
+
+  .errorDescription {
+    p {
+      max-width: 30%;
+      margin: 10px auto;
+      border-radius: 15px;
+      background-color: rgb(238, 190, 190);
+    }
+  }
+}
