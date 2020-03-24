@@ -1,4 +1,4 @@
-// Fix do pq de ele estar a fazer crescer o recipe container tbm
+$center: center;
 
 .recipeModalContainer {
   position: fixed;
@@ -8,42 +8,35 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: center;
-  align-items: center;
-  & .recipeModalContent {
-    padding: 15px;
+  justify-content: $center;
+  align-items: $center;
+  .recipeModalContent {
     background-color: #fff;
-    width: 50%;
     height: 70%;
     overflow-y: scroll;
     border-radius: 5px;
     background-color: rgb(245, 217, 170);
     position: relative;
 
-    & .recipeName {
+    .recipeName {
       color: lightcoral;
     }
 
-    & .recipeIngNImage {
+    .recipeIngNImage {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 15px;
+      justify-content: $center;
+      align-items: $center;
       border: dashed;
       border-color: lightsalmon;
 
-      & .recipeList .recipeIngredients {
-        list-style-type: none;
-      }
-
-      & .recipeImageContainer {
-        & .recipeImage {
+      .recipeImageContainer {
+        .recipeImage {
           border-radius: 5px;
         }
       }
     }
 
-    & .closeBtn {
+    .closeBtn {
       position: absolute;
       top: 0;
       right: 0;
@@ -80,48 +73,46 @@
 }
 
 .recipeContainer {
-  margin: 50px;
   background-color: #ebd18f;
   box-shadow: 7px 16px lightsalmon;
   border-radius: 5px;
-  text-align: center;
+  text-align: $center;
   padding: 15px;
-  display: grid;
 
-  & .recipeTitle {
+  .recipeTitle {
     color: lightcoral;
     font-weight: 400;
     margin-bottom: 25px;
   }
 
-  & .recipeImageContainer {
+  .recipeImageContainer {
     border-style: dotted;
     border-color: lightcoral;
     display: flex;
-    justify-content: center;
+    justify-content: $center;
     padding: 18px;
     margin-bottom: 25px;
 
-    & .recipeImage {
+    .recipeImage {
       max-width: 100%;
       border-radius: 5px;
     }
 
-    & .ingredientsContainer {
-      & .ingredientsList {
-        & .ingredientsItem {
+    .ingredientsContainer {
+      .ingredientsList {
+        .ingredientsItem {
           font-style: italic;
         }
       }
     }
   }
-  & .recipeNotes {
+  .recipeNotes {
     font-style: italic;
     margin-bottom: 10px;
   }
 
-  & .recipeBtnContainer {
-    & .recipeBtn {
+  .recipeBtnContainer {
+    .recipeBtn {
       border: dashed;
       border-color: lightcoral;
       background-color: lightpink;
@@ -129,11 +120,128 @@
       cursor: pointer;
       padding: 10px;
 
-      & a {
+      a {
         text-decoration: none;
         color: #fff;
         font-weight: bold;
       }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .recipeModalContainer {
+    .recipeModalContent {
+      width: 85%;
+
+      .recipeName {
+        font-size: 13px;
+        margin-bottom: 15px;
+      }
+
+      .recipeIngNImage {
+        flex-direction: column;
+
+        .recipeImageContainer {
+          margin-top: 15px;
+        }
+
+        .recipeList .recipeIngredients {
+          list-style-type: disc;
+        }
+      }
+    }
+  }
+
+  .recipeContainer {
+    width: 100%;
+    margin: 30px auto;
+
+    .recipeTitle {
+      font-size: 25px;
+    }
+
+    .recipeImageContainer {
+      .recipeImage {
+        max-width: 75%;
+      }
+    }
+  }
+}
+
+@media (min-width: 601px) and (max-width: 999px) {
+  .recipeModalContainer {
+    .recipeModalContent {
+      width: 75%;
+      padding: 25px;
+
+      .recipeName {
+        font-size: 17px;
+        margin-bottom: 15px;
+      }
+
+      .recipeIngNImage {
+        flex-direction: column;
+        margin-bottom: 25px;
+
+        .recipeImageContainer {
+          margin-top: 15px;
+        }
+
+        .recipeList .recipeIngredients {
+          list-style-type: disc;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .recipeContainer {
+    margin: 25px 15px 10px 15px;
+    .recipeTitle {
+      font-size: 25px;
+    }
+
+    .recipeNotes {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .recipeModalContainer {
+    .recipeModalContent {
+      width: 85%;
+      padding: 25px;
+
+      .recipeName {
+        font-size: 23px;
+        margin-bottom: 15px;
+      }
+
+      .recipeIngNImage {
+        margin-bottom: 25px;
+        padding: 15px;
+        .recipeImageContainer {
+          margin: 15px 0 0 50px;
+        }
+
+        .recipeList .recipeIngredients {
+          list-style-type: disc;
+          font-size: 23px;
+        }
+      }
+    }
+  }
+
+  .recipeContainer {
+    margin: 25px 20px 15px 20px;
+    .recipeTitle {
+      font-size: 30px;
+    }
+
+    .recipeNotes {
+      font-size: 20px;
     }
   }
 }

@@ -1,41 +1,90 @@
+$center: center;
+
 main {
   background-color: #ffb859;
-  & .searchForm {
+  max-width: 1245px;
+
+  .searchForm {
     display: flex;
-    justify-content: center;
-    align-content: center;
+    justify-content: $center;
+    align-content: $center;
     padding-top: 50px;
     height: 100px;
 
-    & .searchBar {
+    .searchBar {
       width: 50%;
       border: 0;
       border-right: 1px solid #ddd;
+      border-radius: 5px 0 0 5px;
+      padding-left: 8px;
     }
 
-    & .searchBtn {
+    .searchBtn {
       border: 0;
-      padding: 0 5px;
+      padding: 0 10px;
+      border-radius: 0 5px 5px 0;
     }
   }
 
-  & .menuTitle {
+  .menuTitle {
     padding-top: 25px;
-    text-align: center;
+    text-align: $center;
     font-style: italic;
     color: #855e42;
-    font-size: 50px;
   }
 
-  & .loadingTitle {
-    text-align: center;
+  .loadingTitle {
+    text-align: $center;
     font-style: italic;
     color: #855e42;
-    font-size: 50px;
   }
 
-  & .recipe {
+  .recipe {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    .menuTitle {
+      font-size: 35px;
+    }
+
+    .loadingTitle {
+      font-size: 35px;
+    }
+
+    .recipe {
+      margin: 0 20px;
+    }
+  }
+}
+
+@media (min-width: 601px) and (max-width: 999px) {
+  main {
+    .menuTitle {
+      font-size: 40px;
+    }
+
+    .recipe {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  main {
+    max-width: 100%;
+    .menuTitle {
+      font-size: 45px;
+    }
+
+    .loadingTitle {
+      font-size: 45px;
+    }
+
+    .recipe {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }
